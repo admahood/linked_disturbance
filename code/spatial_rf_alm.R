@@ -49,7 +49,7 @@ nsrf <- spatialRF::rf(data = d,
                       distance.matrix = NULL)
 t1 <- Sys.time()
 t1-t0
-
+plot_response_curves(nsrf, ncol=3, quantiles = 0.5)
 
 # doing a spatial model, and checking how much time it takes
 t0 <- Sys.time()
@@ -70,5 +70,5 @@ spatialRF::plot_importance(
   verbose = FALSE
 )
 
-plot_response_curves(nsrf, ncol=3)
+
 print_performance(nsrf)
